@@ -25,10 +25,10 @@
  * to specify which GPIO pin we want to turn ON/OFF **/ 
 struct gpioID
 {
-	char *PINNAME;  //eg. P8_3
-	char * GPIOID; 	//e.g: gpio1[6] 
-	int GPIONUMBER; //e.g: 38
-	char *GPIOMUX;  //e.g: gpmc_ad6; 
+	char PINNAME[10];   //eg. P8_3
+	char GPIOID[10]; 	//e.g: gpio1[6] 
+	int GPIONUMBER;     //e.g: 38
+	char GPIOMUX[10];   //e.g: gpmc_ad6; 
 };
 
 void pulsePin(struct gpioID enabled_gpio[],unsigned int data_to_write,int nbr_selectedPins, int print_to_screen, const char *pinDescription[], int pinID, int delay);

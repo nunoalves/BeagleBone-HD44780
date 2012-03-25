@@ -11,33 +11,31 @@ unsigned int write_character (char character, int part)
 {
 	assert(part==0 || part==1);
 
-	int i;
 	char acB[2];
 	sprintf(acB, "%x", character);
-	char hx[256];
-	int decVal = (int) character;
 
 	unsigned int return_value = 0;
-	int var = ((int)acB[part])-48;
-	switch (var)
+	
+	switch (acB[part])
 	{
-		case 0: return_value = 16;  break; 	
-		case 1: return_value = 24;	break;
-		case 2: return_value = 20;	break;
-		case 3: return_value = 28;	break;
-		case 4: return_value = 18;	break;
-		case 5: return_value = 26;	break;
-		case 6: return_value = 22;	break;
-		case 7: return_value = 30;	break;
-		case 8: return_value = 17;	break;
-		case 9: return_value = 25;	break;
-		case 10: return_value = 21; break;
-		case 11: return_value = 29; break;
-		case 12: return_value = 19; break;
-		case 13: return_value = 27; break;
-		case 14: return_value = 23; break;
-		case 15: return_value = 31; break;
+		case '0': return_value = 16; break; 	
+		case '1': return_value = 24; break;
+		case '2': return_value = 20; break;
+		case '3': return_value = 28; break;
+		case '4': return_value = 18; break;
+		case '5': return_value = 26; break;
+		case '6': return_value = 22; break;
+		case '7': return_value = 30; break;
+		case '8': return_value = 17; break;
+		case '9': return_value = 25; break;
+		case 'a': return_value = 21; break;
+		case 'b': return_value = 29; break;
+		case 'c': return_value = 19; break;
+		case 'd': return_value = 27; break;
+		case 'e': return_value = 23; break;
+		case 'f': return_value = 31; break;
 	}
+	
 	return(return_value);
 }
 
@@ -52,7 +50,6 @@ void charToScreen(char characterToWrite, struct gpioID enabled_gpio[])
 	const char *pinDescription[] = {"","","","","",""};
 
 	data_to_write=write_character (characterToWrite,0);
-
 	turn_ON_OFF_pins(enabled_gpio,data_to_write,6,0.10,pinDescription);
 	pulsePin(enabled_gpio,data_to_write,6,0, pinDescription, 5, 0.10);
   	sleep(0.10);
@@ -220,10 +217,10 @@ void terminate_Screen(struct gpioID enabled_gpio[],int selectedPins[])
 
 /** 
  * @brief Prints a string to the screen.
- * @param stringToScreen[] Screen that needs to be printed on the LCD
- * @param selected_GPIOs[] initialized array of gpioID. 
+ * @param full_string  String that needs to be printed on the LCD
+ * @param selected_GPIOs[] Initialized array of gpioID. 
  **/
-void stringToScreen(char full_string[], struct gpioID enabled_gpio[])
+void stringToScreen(const char *full_string, struct gpioID enabled_gpio[])
 {
 	int i;
 	int length = strlen(full_string);

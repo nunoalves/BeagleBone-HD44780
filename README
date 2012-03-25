@@ -1,0 +1,6 @@
+* To compile all the examples extract all the files into the same directory and type:
+make
+
+* To run an example, then type:
+./example_01
+and replace the 01 with any other available number.

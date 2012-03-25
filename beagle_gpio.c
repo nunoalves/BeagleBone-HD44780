@@ -25,7 +25,6 @@ void write_GPIO_value(int GPIONUMBER, int value)
  **/ 
 void cleanup_GPIO(struct gpioID selected_GPIOs[],int selectedPins[], int nbr_selectedPins)
 {
-	char export_filename[50]; 
 	FILE *f = NULL; 
 	int i;
 	
@@ -66,80 +65,80 @@ void initialize_each_enabled_gpio(struct gpioID selected_GPIOs[],int selectedPin
 		switch (selectedPins[i])
 		{
 			case P8_3:
-				selected_GPIOs[i].PINNAME="P8_3";
-				selected_GPIOs[i].GPIOID="gpio1[6]";
+				strcpy(selected_GPIOs[i].PINNAME, "P8_3");
+				strcpy(selected_GPIOs[i].GPIOID, "gpio1[6]");
+				strcpy(selected_GPIOs[i].GPIOMUX, "gpmc_ad6");
 				selected_GPIOs[i].GPIONUMBER=38;
-				selected_GPIOs[i].GPIOMUX="gpmc_ad6";
 				break;
                 
 			case P8_4:
-				selected_GPIOs[i].PINNAME="P8_4";
-				selected_GPIOs[i].GPIOID="gpio1[7]";
+				strcpy(selected_GPIOs[i].PINNAME, "P8_4");
+				strcpy(selected_GPIOs[i].GPIOID, "gpio1[7]");
+				strcpy(selected_GPIOs[i].GPIOMUX, "gpmc_ad7");
 				selected_GPIOs[i].GPIONUMBER=39;
-				selected_GPIOs[i].GPIOMUX="gpmc_ad7";
 				break;
                 
 			case P8_5:
-				selected_GPIOs[i].PINNAME="P8_5";
-				selected_GPIOs[i].GPIOID="gpio1[2]";
+				strcpy(selected_GPIOs[i].PINNAME, "P8_5");
+				strcpy(selected_GPIOs[i].GPIOID, "gpio1[2]");
+				strcpy(selected_GPIOs[i].GPIOMUX, "gpmc_ad2");
 				selected_GPIOs[i].GPIONUMBER=34;
-				selected_GPIOs[i].GPIOMUX="gpmc_ad2";
 				break;
                 
 			case P8_11:
-				selected_GPIOs[i].PINNAME="P8_11";
-				selected_GPIOs[i].GPIOID="gpio1[13]";
+				strcpy(selected_GPIOs[i].PINNAME, "P8_11");
+				strcpy(selected_GPIOs[i].GPIOID, "gpio1[13]");
+				strcpy(selected_GPIOs[i].GPIOMUX, "gpmc_ad13");
 				selected_GPIOs[i].GPIONUMBER=45;
-				selected_GPIOs[i].GPIOMUX="gpmc_ad13";
 				break;
                 
 			case P8_12:
-				selected_GPIOs[i].PINNAME="P8_12";
-				selected_GPIOs[i].GPIOID="gpio1[12]";
+				strcpy(selected_GPIOs[i].PINNAME, "P8_12");
+				strcpy(selected_GPIOs[i].GPIOID, "gpio1[12]");
+				strcpy(selected_GPIOs[i].GPIOMUX, "gpmc_ad12");
 				selected_GPIOs[i].GPIONUMBER=44;
-				selected_GPIOs[i].GPIOMUX="gpmc_ad12";
 				break;
 
 			case P8_14:
-				selected_GPIOs[i].PINNAME="P8_14";
-				selected_GPIOs[i].GPIOID="gpio0[26]";
+				strcpy(selected_GPIOs[i].PINNAME, "P8_14");
+				strcpy(selected_GPIOs[i].GPIOID, "gpio0[26]");
+				strcpy(selected_GPIOs[i].GPIOMUX, "gpmc_ad10");
 				selected_GPIOs[i].GPIONUMBER=26;
-				selected_GPIOs[i].GPIOMUX="gpmc_ad10";
 				break;
            
    	  		case P8_15:
-				selected_GPIOs[i].PINNAME="P8_15";
-				selected_GPIOs[i].GPIOID="gpio1[15]";
+				strcpy(selected_GPIOs[i].PINNAME, "P8_15");
+				strcpy(selected_GPIOs[i].GPIOID, "gpio1[15]");
+				strcpy(selected_GPIOs[i].GPIOMUX, "gpmc_ad15");
 				selected_GPIOs[i].GPIONUMBER=47;
-				selected_GPIOs[i].GPIOMUX="gpmc_ad15";
 				break;
  
  			case P8_16:
-				selected_GPIOs[i].PINNAME="P8_16";
-				selected_GPIOs[i].GPIOID="gpio1[14]";
+				strcpy(selected_GPIOs[i].PINNAME, "P8_16");
+				strcpy(selected_GPIOs[i].GPIOID, "gpio1[14]");
+				strcpy(selected_GPIOs[i].GPIOMUX, "gpmc_ad14");
 				selected_GPIOs[i].GPIONUMBER=46;
-				selected_GPIOs[i].GPIOMUX="gpmc_ad14";
 				break;
 
  			case P8_17:
-				selected_GPIOs[i].PINNAME="P8_17";
-				selected_GPIOs[i].GPIOID="gpio0[27]";
+				strcpy(selected_GPIOs[i].PINNAME, "P8_17");
+				strcpy(selected_GPIOs[i].GPIOID, "gpio0[27]");
+				strcpy(selected_GPIOs[i].GPIOMUX, "gpmc_ad11");
 				selected_GPIOs[i].GPIONUMBER=27;
-				selected_GPIOs[i].GPIOMUX="gpmc_ad11";
 				break;
 
  			case P8_20:
-				selected_GPIOs[i].PINNAME="P8_20";
-				selected_GPIOs[i].GPIOID="gpio1[31]";
+				strcpy(selected_GPIOs[i].PINNAME, "P8_20");
+				strcpy(selected_GPIOs[i].GPIOID, "gpio1[31]");
+				strcpy(selected_GPIOs[i].GPIOMUX, "gpmc_csn2");
 				selected_GPIOs[i].GPIONUMBER=63;
-				selected_GPIOs[i].GPIOMUX="gpmc_csn2";
 				break;
 
  			case P8_21:
-				selected_GPIOs[i].PINNAME="P8_21";
-				selected_GPIOs[i].GPIOID="gpio1[30]";
+				strcpy(selected_GPIOs[i].PINNAME, "P8_21");
+				strcpy(selected_GPIOs[i].GPIOID, "gpio1[30]");
+				strcpy(selected_GPIOs[i].GPIOMUX, "gpmc_csn1");
 				selected_GPIOs[i].GPIONUMBER=62;
-				selected_GPIOs[i].GPIOMUX="gpmc_csn1";
 				break;
            
 			default:

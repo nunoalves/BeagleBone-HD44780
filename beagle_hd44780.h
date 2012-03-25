@@ -23,5 +23,5 @@ void terminate_Screen(struct gpioID enabled_gpio[],int selectedPins[]);
 void clear_Screen(struct gpioID enabled_gpio[]);
 void enableBlinkingCursor(struct gpioID enabled_gpio[]);
 void disableBlinkingCursor(struct gpioID enabled_gpio[]);
-void stringToScreen(char full_string[], struct gpioID enabled_gpio[]);
+void stringToScreen(const char *full_string, struct gpioID enabled_gpio[]);
 #endif
