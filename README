@@ -1,6 +1,4 @@
-* To compile all the examples extract all the files into the same directory and type:
-make
-
-* To run an example, then type:
-./example_01
-and replace the 01 with any other available number.
+NOTE: As of April 08 2012, this libary has been discontinued... Please use
+the updated library at https://github.com/nunoalves/BeagleBone_IO_lib.
+The reason why I haven't deleted this repository is because it is linked with 
+two blog posts at http://www.nunoalves.com/open_source/ .
